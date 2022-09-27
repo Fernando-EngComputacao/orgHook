@@ -1,17 +1,19 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
-import { loadTopo } from '../../../services/carregaDados';
+import { carregaTopo } from '../../../services/carregaDados';
 import logo from '../../../assets/logo.png';
 
 
-export default function Topo() {
+class Topo extends React.Component {
    
+    render() {
         return <View style={styles.topo}>
             <Image source={logo} style={styles.image} />
             <Text style={styles.welcome}>Olá, Fernando Furtado!</Text>
             <Text style={styles.legenda}>Encontre os melhores produtores</Text>
         </View>
+    }
 
 }
 
@@ -35,3 +37,5 @@ const styles = StyleSheet.create({
         lineHeight: 26,
     }
 });
+
+export default Topo;    
