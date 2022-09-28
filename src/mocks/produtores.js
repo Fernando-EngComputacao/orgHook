@@ -14,31 +14,31 @@ const produtores = {
         {
             name: "Green",
             image: green,
-            distance: `${randon(1,750)} m`,
+            distance: `${randon(1,750)}`,
             starts: randon(1,5),
         },
         {
             name: "Salad",
             image: salad,
-            distance: `${randon(1,750)} m`,
+            distance: `${randon(1,750)}`,
             starts: randon(1,5),
         },
         {
             name: "Jenny Jack",
             image: jennyJack,
-            distance: `${randon(1,750)} m`,
+            distance: `${randon(1,750)}`,
             starts: randon(1,5),
         },
         {
             name: "Grow",
             image: grow,
-            distance: `${randon(1,750)} m`,
+            distance: `${randon(1,750)}`,
             starts: randon(1,5),
         },
         {
             name: "Potager",
             image: potager,
-            distance: `${randon(1,750)} m`,
+            distance: `${randon(1,750)}`,
             starts: randon(1,5),
         },
     ]

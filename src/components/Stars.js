@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Star from "./Star";
 
 export default function Stars({
@@ -11,10 +11,11 @@ export default function Stars({
     const [quantidade, setQuantidade] = useState(quantidadeAntiga);
 
     const RenderStars = () => {
-        const starList = []
+        const starList = [];
         for (let x = 0; x < 5; x++) {
             starList.push(
                 <Star 
+                    key={x}
                     onPress={() => setQuantidade(x+1)}
                     desabilitada={!editavel}
                     preenchida={x < quantidade}

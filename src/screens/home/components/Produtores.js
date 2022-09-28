@@ -20,7 +20,6 @@ export default function Produtores({ topo: Topo }) {
         renderItem={({ item }) => <Produtor {...item} />}
         keyExtractor={({ name }) => name}
         ListHeaderComponent={TopoList}
-        key={(name) => name}
     />
 }
 
