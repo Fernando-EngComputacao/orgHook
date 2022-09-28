@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: 70,
-        height: 18,
+        height: 28,
     },
     welcome: {
         marginTop: 24,

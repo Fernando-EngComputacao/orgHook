@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Stars from "../../../components/Stars";
 
 export default function Produtor({ name, image, distance, stars }) {
 
-    const [selecionado, setSelecionado] = useState(false);
+    // const [selecionado, setSelecionado] = useState(false);
+    const [selecionado,inverterSelecionado] = useReducer((selecionado) => !selecionado, false);
 
     return <TouchableOpacity
         style={styles.card}
-        onPress={() => setSelecionado(!selecionado)}
+        onPress={inverterSelecionado}
     >
         <Image source={image} accessibilityLabel={name} style={styles.image} />
         <View style={styles.info}>

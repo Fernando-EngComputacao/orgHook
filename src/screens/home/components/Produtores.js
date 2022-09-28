@@ -7,7 +7,7 @@ import useProdutores from '../../../hooks/useProdutores';
 export default function Produtores({ topo: Topo }) {
 
     const [title, list] = useProdutores();
-    
+
     const TopoList = () => {
         return <>
             <Topo />
@@ -20,6 +20,7 @@ export default function Produtores({ topo: Topo }) {
         renderItem={({ item }) => <Produtor {...item} />}
         keyExtractor={({ name }) => name}
         ListHeaderComponent={TopoList}
+        key={(name) => name}
     />
 }
 
