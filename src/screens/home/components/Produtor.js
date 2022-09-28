@@ -1,19 +1,33 @@
-import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Stars from "../../../components/Stars";
 
 export default function Produtor({ name, image, distance, stars }) {
-    return <View style={styles.card}>
-        <Image source={image} accessibilityLabel={name}  style={styles.image} />
+
+    const [selecionado, setSelecionado] = useState(false);
+
+    return <TouchableOpacity
+        style={styles.card}
+        onPress={() => setSelecionado(!selecionado)}
+    >
+        <Image source={image} accessibilityLabel={name} style={styles.image} />
         <View style={styles.info}>
-            <Text style={styles.name}>{ name }</Text>
-            <Text style={styles.distance}>{ distance }</Text>
+            <View>
+                <Text style={styles.name}>{name}</Text>
+                <Stars
+                    quantidade={stars}
+                    editavel={selecionado}
+                    grande={selecionado}
+                />
+            </View>
+            <Text style={styles.distance}>{distance}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor:'#F6F6F6',
+        backgroundColor: '#F6F6F6',
         marginVertical: 8,
         marginHorizontal: 16,
         borderRadius: 6,
@@ -45,7 +59,7 @@ const styles = StyleSheet.create({
         marginLeft: 8,
         marginVertical: 16,
         marginRight: 16,
-    }, 
+    },
     name: {
         fontSize: 14,
         lineHeight: 22,
