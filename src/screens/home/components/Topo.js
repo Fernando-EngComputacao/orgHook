@@ -6,12 +6,27 @@ import logo from '../../../assets/logo.png';
 
 
 class Topo extends React.Component {
-   
+
+    state = {
+        topo: {
+            welcome: '',
+            legenda: '',
+        }
+    }
+
+    atualizaTopo() {
+        this.setState({topo:  carregaTopo()});
+    }
+
+    componentDidMount(){
+        this.atualizaTopo();
+    }
+
     render() {
         return <View style={styles.topo}>
             <Image source={logo} style={styles.image} />
-            <Text style={styles.welcome}>Olá, Fernando Furtado!</Text>
-            <Text style={styles.legenda}>Encontre os melhores produtores</Text>
+            <Text style={styles.welcome}> { this.state.topo.welcome } </Text>
+            <Text style={styles.legenda}>{ this.state.topo.legenda }</Text>
         </View>
     }
 
@@ -31,10 +46,12 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         fontWeight: 'bold',
+        color: '#464646',
     },
     legenda: {
         fontSize: 16,
         lineHeight: 26,
+        color: '#A3A3A3'
     }
 });
 
